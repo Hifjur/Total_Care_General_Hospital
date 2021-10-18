@@ -3,9 +3,12 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../../Hooks/useAuth";
 
 const Register = () => {
-    const { userInfo  } = useAuth();
+    const { userInfo, createAccountWithEmail  } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => userInfo(data);
+    const onSubmit = data => {
+        userInfo(data);
+        createAccountWithEmail();
+    }
 
     
 
@@ -13,15 +16,15 @@ const Register = () => {
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
         <div className="container mx-auto w-full max-w-lg">
             <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit(onSubmit)}>
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
                     Username
                 </label>
                 <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Name" {...register("name")} />
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
                     Email
                 </label>
                 <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email"  {...register("email", { required: true })} />
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
                     Password
                 </label>
                 <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password" {...register("password", { required: true })} />
