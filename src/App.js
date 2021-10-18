@@ -10,6 +10,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import AmbulanceService from './Pages/AmbulanceService/AmbulanceService';
 import Footer from './Pages/Shared/Footer/Footer';
 import Doctors from './Pages/Doctors/Doctors';
+import PrivateRoute from './Pages/Shared/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -24,12 +25,12 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/ambulance">
+            <PrivateRoute path="/ambulance">
               <AmbulanceService></AmbulanceService>
-            </Route>
-            <Route path="/doctors">
+            </PrivateRoute>
+            <PrivateRoute path="/doctors">
               <Doctors></Doctors>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>
