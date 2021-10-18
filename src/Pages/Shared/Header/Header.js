@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <div className="p-10 bg-gray-700 ">
             <NavLink activeClassName="underline text-green-500" className="p-5 text-lg font-bold text-gray-300" to="/home">Home</NavLink>
-            <NavLink activeClassName="underline text-green-500" className="p-5 text-lg font-bold text-gray-300" to="/shipping">Shipping</NavLink>
+            <NavLink activeClassName="underline text-green-500" className="p-5 text-lg font-bold text-gray-300" to="/ambulance">Ambulance Service</NavLink>
             <NavLink activeClassName="underline text-green-500" className="p-5 text-lg font-bold text-gray-300" to="/placeorder">Placec order   </NavLink>
             <NavLink activeClassName="underline text-green-500" className="p-5 text-lg font-bold text-gray-300" to="/register">Register</NavLink>
             <NavLink activeClassName="underline text-green-500" className="p-5 text-lg font-bold text-gray-300" to="/login">Login</NavLink>

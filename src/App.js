@@ -6,6 +6,9 @@ import Login from './Pages/Authentication/Login/Login';
 import Register from './Pages/Authentication/Register/Register';
 import Home from './Pages/Home/Home/Home';
 import Header from './Pages/Shared/Header/Header';
+import NotFound from './Pages/NotFound/NotFound';
+import AmbulanceService from './Pages/AmbulanceService/AmbulanceService';
+import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -20,13 +23,20 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+            <Route path="/ambulance">
+              <AmbulanceService></AmbulanceService>
+            </Route>
             <Route path="/login">
               <Login></Login>
             </Route>
             <Route path="/register">
               <Register></Register>
             </Route>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
+          <Footer></Footer>
         </BrowserRouter>
       </AuthProvider>
     </div>

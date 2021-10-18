@@ -4,7 +4,7 @@ const services = [
         name: "General Checkup",
         description:"A full body check up. A yearly checkup is recommended for everyone",
         img:"https://i.ibb.co/r3b0wFr/01.jpg",
-        fees: 500
+        fees: 500,
     },
     {
         id: 2,
