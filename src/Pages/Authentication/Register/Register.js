@@ -3,10 +3,11 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../../Hooks/useAuth";
 
 const Register = () => {
+    const { userInfo  } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => userInfo(data);
 
-    const { user } = useAuth();
+    
 
     return (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
@@ -15,11 +16,11 @@ const Register = () => {
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                     Username
                 </label>
-                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Name" defaultValue={user.displayName} {...register("name")} />
+                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Name" {...register("name")} />
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                     Email
                 </label>
-                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email" defaultValue={user.email} {...register("email", { required: true })} />
+                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email"  {...register("email", { required: true })} />
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                     Password
                 </label>
