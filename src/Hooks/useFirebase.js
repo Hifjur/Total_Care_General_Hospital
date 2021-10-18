@@ -12,10 +12,18 @@ const useFirebase = () => {
     const [name, setName] = useState("");
     const auth = getAuth();
 
-    const userInfo = data => {
+    const userInfo= data=> {
         setName(data.name);
         setEmail(data.email);
         setPassword(data.password);
+    }
+    const userInfoRegister = data => {
+        userInfo(data);
+        createAccountWithEmail();
+    }
+    const userInfoLogin = data => {
+        userInfo(data);
+        signInWithEmail();
     }
 
     const signInWithEmail = () =>{
@@ -86,9 +94,8 @@ const useFirebase = () => {
         isLoading,
         signInUsingGoogle,
         logOut,
-        userInfo,
-        createAccountWithEmail,
-        signInWithEmail
+        userInfoRegister,
+        userInfoLogin
     }
 }
 

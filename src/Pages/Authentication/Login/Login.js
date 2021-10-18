@@ -3,22 +3,21 @@ import useAuth from '../../../Hooks/useAuth';
 import { useForm } from "react-hook-form";
 
 const Login = () => {
-    const { signInUsingGoogle, userInfo, signInWithEmail } = useAuth();
+    const { signInUsingGoogle, userInfoLogin } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        userInfo(data);
-        signInWithEmail();
+        userInfoLogin(data);
     };
     return (
         <div>
             <h1>login</h1>
             <div className="container mx-auto w-full max-w-lg">
                 <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit(onSubmit)}>
-                    <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                         Email
                     </label>
                     <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email" {...register("email", { required: true })} />
-                    <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
                         Password
                     </label>
                     <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password" {...register("password", { required: true })} />
