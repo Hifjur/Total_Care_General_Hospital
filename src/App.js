@@ -9,6 +9,7 @@ import Header from './Pages/Shared/Header/Header';
 import NotFound from './Pages/NotFound/NotFound';
 import AmbulanceService from './Pages/AmbulanceService/AmbulanceService';
 import Footer from './Pages/Shared/Footer/Footer';
+import Doctors from './Pages/Doctors/Doctors';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route path="/ambulance">
               <AmbulanceService></AmbulanceService>
+            </Route>
+            <Route path="/doctors">
+              <Doctors></Doctors>
             </Route>
             <Route path="/login">
               <Login></Login>
