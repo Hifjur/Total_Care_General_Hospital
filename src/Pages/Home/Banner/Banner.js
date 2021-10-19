@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, Nav, NavLink } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
+import { Link,} from 'react-router-dom';
+
 import banner from '../../../Images/Banner.jpg'
 const Banner = () => {
     return (
