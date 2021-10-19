@@ -1,5 +1,6 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
+
 
 const Service = (props) => {
     const { id, name, description, fees, img } = props.data

@@ -1,21 +1,26 @@
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import useServiceContext from '../../../Hooks/useServiceContext';
 import useServices from '../../../Hooks/useServices';
 
-import AppointmentCard from '../AppointmentCard/AppointmentCard';
 
 
-const Appointment = () => {
+
+const Appointment = (props) => {
+    const [service, setService] = useState([]);
+    useEffect(() => {
+        fetch('./services.json')
+        .then(res => res.json())
+        .then(data => setService(data));
+    },[])
+    console.log(service);
     const { appointmentId } = useParams();
-    const {loadData} = useServices()
-    const booked =loadData(appointmentId);
-    console.log(booked);
-    //const Booked = services.filter(service => service.id === appointmentId)
+    //  const a= useContext(ServiceContext);
+     //console.log(a);
     return (
         <div>
-            {/* {
-               Booked.map(service => <AppointmentCard key={service.id} data={service}></AppointmentCard>)
-            } */}
+            <h1>id: {appointmentId}</h1>
+            
+            
         </div>
     );
 

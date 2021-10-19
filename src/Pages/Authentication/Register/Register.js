@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../../Hooks/useAuth";
 
 const Register = () => {
-    const { userInfoRegister } = useAuth();
+    const { userInfoRegister, error } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         userInfoRegister(data);
@@ -28,6 +28,7 @@ const Register = () => {
                 </label>
                 <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password" {...register("password", { required: true })} />
                 {errors.email && <span className="text-red-500 text-xs italic">This field is required</span>}
+                <p className="text-red-500">{error}</p>
                 <br />
                 <input className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-5 rounded focus:outline-none focus:shadow-outline" type="submit" />
             </form>
