@@ -36,7 +36,7 @@ const Register = () => {
                 </form>
 
             </div>
-            <Link to="/register">
+            <Link to="/login">
                 <p className="text-sm text-blue-400 pb-64 bg-gray-200 bg-opacity-80 font-bold hover:text-green-500 text-center">Already Have An Toatal Care Account? Login Here here</p>
             </Link>
         </div>
