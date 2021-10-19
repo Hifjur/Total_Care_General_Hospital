@@ -7,7 +7,7 @@ const Services = () => {
     console.log(services);
     const { service } = services;
     return (
-        <div>
+        <div id="services">
             <h1 className="text-4xl text-gray-300 p-20 bg-gray-700 font-black">Our Services</h1>
             <div  className=" container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {

@@ -2,6 +2,7 @@ import React from 'react';
 import useAuth from '../../../Hooks/useAuth';
 import { useForm } from "react-hook-form";
 import { useHistory, useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const { signInUsingGoogle, userInfoLogin, error, setUser, setIsLoading } = useAuth();
@@ -13,17 +14,17 @@ const Login = () => {
         userInfoLogin(data);
     };
 
-    const loginHandler =() =>{
+    const loginHandler = () => {
         signInUsingGoogle()
-        .then(result => {
-            setUser(result.user);
-            history.push(redirect_uri);
-        })
-        .finally(() => setIsLoading(false));
+            .then(result => {
+                setUser(result.user);
+                history.push(redirect_uri);
+            })
+            .finally(() => setIsLoading(false));
     }
     return (
         <div>
-            <h1>login</h1>
+            <h1 className="text-4xl text-gray-300 p-20 bg-gray-700 font-black">login</h1>
             <div className="container mx-auto w-full max-w-lg">
                 <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit(onSubmit)}>
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
@@ -41,9 +42,12 @@ const Login = () => {
                 </form>
             </div>
             <button onClick={loginHandler} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Google Login</button>
+            <Link to="/register">
+                <p className="text-sm text-blue-400 pb-64 bg-gray-200 bg-opacity-80 font-bold hover:text-green-500 text-center">New to Toatal Care? Create An Account here</p>
+            </Link>
         </div>
     );
-    
+
 };
 
 export default Login;
