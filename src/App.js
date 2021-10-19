@@ -11,10 +11,11 @@ import AmbulanceService from './Pages/AmbulanceService/AmbulanceService';
 import Footer from './Pages/Shared/Footer/Footer';
 import Doctors from './Pages/Doctors/Doctors';
 import PrivateRoute from './Pages/Shared/PrivateRoute/PrivateRoute';
+import Appointment from './Pages/Appointment/Appointment/Appointment';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-gray-300">
       <AuthProvider>
         <BrowserRouter>
           <Header></Header>
@@ -25,6 +26,9 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+            <PrivateRoute path="/appointment/:appointmentId">
+              <Appointment></Appointment>
+            </PrivateRoute>
             <PrivateRoute path="/ambulance">
               <AmbulanceService></AmbulanceService>
             </PrivateRoute>

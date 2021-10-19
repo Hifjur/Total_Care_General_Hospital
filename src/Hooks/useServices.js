@@ -7,7 +7,12 @@ const useServices = () => {
         .then(res => res.json())
         .then(data => setService(data));
     },[])
-    return {service};
+    const loadData = (id) =>{
+        const booked =service.filter(service.id === id);
+        return booked;
+    }
+    return {service,
+    loadData};
 };
 
 export default useServices;
