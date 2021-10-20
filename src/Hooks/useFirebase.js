@@ -20,7 +20,11 @@ const useFirebase = () => {
     }
     const userInfoRegister = data => {
         userInfo(data);
-        createAccountWithEmail();
+        if(email === ""){ setError("There was an error. Plase try again")}
+        else{
+            createAccountWithEmail();
+            setEmail("");
+        }
     }
     const userInfoLogin = data => {
         userInfo(data);
@@ -32,6 +36,7 @@ const useFirebase = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            setEmail("");
 
         })
         .catch(error => {
