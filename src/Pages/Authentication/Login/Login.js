@@ -43,7 +43,7 @@ const Login = () => {
             </div>
             <button onClick={loginHandler} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Google Login</button>
             <Link to="/register">
-                <p className="text-sm text-blue-400 pb-64 bg-gray-200 bg-opacity-80 font-bold hover:text-green-500 text-center">New to Toatal Care? Create An Account here</p>
+                <p className="text-sm text-blue-400 pb-64 bg-gray-300 bg-opacity-80 font-bold hover:text-green-500 text-center">New to Toatal Care? Create An Account here</p>
             </Link>
         </div>
     );
