@@ -46,6 +46,7 @@ const useFirebase = () => {
             const user = result.user;
             console.log(user);
             setUserName();
+            setError("Account created succesfully! Now log in from the Login page.");
         })
         .catch((error) => {
             console.log(error.message);
