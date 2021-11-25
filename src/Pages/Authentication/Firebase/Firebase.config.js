@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyBQ72Fls1Mp27e_vWa7kKFC7zdqs8Hya-w",
-    authDomain: "total-care-general-hospital.firebaseapp.com",
-    projectId: "total-care-general-hospital",
-    storageBucket: "total-care-general-hospital.appspot.com",
-    messagingSenderId: "336727297451",
-    appId: "1:336727297451:web:2aebe95c14cc95d48d96ee"
-  };
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+};
 
-  export default firebaseConfig;
+export default firebaseConfig;
